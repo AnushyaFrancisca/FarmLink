@@ -21,5 +21,5 @@ from FARMLINK.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',login,name='login'),
+    path('',home,name='home'),
 ]
