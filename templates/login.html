@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -8,13 +9,13 @@
       <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="C:\Users\Asus\OneDrive\Desktop\MScDS-A\Web Development\Farmlink Project\static\css\style.css">
+      <link rel="stylesheet" href="{% static 'css\style.css' %}">
 
       <title>Login Form</title>
    </head>
    <body>
       <div class="login">
-         <img src="C:\Users\Asus\OneDrive\Desktop\MScDS-A\Web Development\Farmlink Project\static\img\login_img.jpg" alt="login image" class="login__img">
+         <img src="{% static 'img\login_img.jpg' %}" alt="login image" class="login__img">
 
          <form action="" class="login__form">
             <h1 class="login__title">Login</h1>
