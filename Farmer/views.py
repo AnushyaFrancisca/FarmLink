@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def farmer(request):
-    return render(request, 'farmer.html')
+def Farmer(request):
+    return render(request, 'Farmer.html')
