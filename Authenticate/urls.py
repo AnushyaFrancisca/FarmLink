@@ -3,5 +3,6 @@ from django.urls import path
 from Authenticate.views import *
 
 urlpatterns = [
-    path('',login,name='login'),
+    path('',userlogin,name='login'),
+    path('Admin/admin-dashboard',admin_dashboard,name='admin-dashboard')
 ]
