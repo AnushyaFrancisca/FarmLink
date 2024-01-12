@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.hashers import make_password  #for encryption of password
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+
+from Authenticate.models import userdetails
+
 
 # Create your views here.
 def userlogin(request):
@@ -18,3 +23,17 @@ def userlogin(request):
 
 def admin_dashboard(request):
     return render(request,'Admin/admin-dashboard.html') #admin_dashboard.html needs to be added
+
+def register(request):
+    if request.method == 'POST':
+        name=request.POST['name']
+        email=request.POST['email']
+        password=request.POST['password']
+        phone=request.POST['phone']
+        role=request.POST['role']
+        user=User(first_name=name,username=email,email=email,password=make_password(password))
+        user.save()
+        user_details=userdetails(user_id=user.id, user_phone=phone,user_type=role)
+        user_details.save()
+        return redirect('login')
+    return render(request, 'Authenticate/register.html')
