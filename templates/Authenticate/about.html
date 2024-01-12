@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>FARMLINK</title>
+  <meta name="description" content="Personal site of designer Dave Gamache.">
+  <meta name="author" content="Dave Gamache | @dhg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css\index\base.css' %}">
+  <link rel="stylesheet" href="{% static 'css\index\main.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="% static 'favicon.png' %">
+  <script type="text/javascript" src="//use.typekit.net/rws3een.js"></script>
+  <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+  <style>
+    .bg1{
+          background-image: url("{% static 'img\\index\\bg2.jpg' %}")
+    }
+  </style>
+</head>
+
+<body>
+  {% block content %}
+  <div class="container">
+    <div class="container-inner">
+      <div class="background bg1"></div>
+      <section id="intro" class="wrapper">
+        <h1 class="name">Welcome to FARMLINK</h1>
+        <h2 class="byline">This is your gateway into a digital revolution, transforming the agricultural landscape like
+          never before.</h2>
+
+      </section>
+      <section id="explosion" class="wrapper">
+        <p class="explosion-byline">Get ready to sow the seeds of innovation, connect with fellow farmers, and reap the benefits of
+          cutting-edge technology. Farmlink is not just an app; it's a game-changer, providing you with the tools to
+          thrive in the modern farming frontier. So, buckle up, farmer friend, because the future of agriculture starts
+          right here, right now, with Farmlink – your digital field of dreams!</p>
+        <ul id="domExplosionList">
+          <li class="dom-explosion-item dei-1"></li>
+          <li class="dom-explosion-item dei-2"></li>
+          <li class="dom-explosion-item dei-3"></li>
+          <li class="dom-explosion-item dei-4"></li>
+          <li class="dom-explosion-item dei-5"></li>
+          <li class="dom-explosion-item dei-6"></li>
+          <li class="dom-explosion-item dei-7"></li>
+          <li class="dom-explosion-item dei-8"></li>
+          <li class="dom-explosion-item dei-9"></li>
+          <li class="dom-explosion-item dei-10"></li>
+          <li class="dom-explosion-item dei-11"></li>
+          <li class="dom-explosion-item dei-12"></li>
+          <li class="dom-explosion-item dei-13"></li>
+          <li class="dom-explosion-item dei-14"></li>
+          <li class="dom-explosion-item dei-15"></li>
+          <li class="dom-explosion-item dei-16"></li>
+        </ul>
+      </section>
+      <section id="images" class="wrapper">
+        <p class="images-byline">Or better yet, a realistic example of showcasing some design work.</p>
+        <p class="images-byline-2">Really, anything is possible &hellip;</p>
+        <img id="mediumHomepage" class="raw-page" src="{% static 'img\index\oversized-raw-homepage.jpg' %}">
+        <div class="iphone">
+          <img class="iphone-frame" src="{% static 'img\index\iphoneframe.png' %}">
+          <div class="iphone-viewport">
+            <img id="medium-profile-iphone" class="iphone-content"
+              src="{% static 'img\index\medium-profile-iphone-fullsize.jpg' %}">
+            <img id="davegamache-dot-com" class="iphone-content" src="{% static 'img\index\davegamache-rotated.jpg' %}">
+          </div>
+        </div>
+      </section>
+      <section id="links">
+        <p class="links-byline">Learn how to make your parallax site smooth like this one.</p>
+        <a class="btn" href="https://medium.com/@dhg/82ced812e61c">Read about it on Medium</a>
+      </section>
+    </div>
+    <div class="twitter">
+      <a href="https://twitter.com/dhg" class="twitter-follow-button" data-show-count="false">Follow @dhg</a>
+      <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://davegamache.com/parallax"
+        data-text="A parallax demo that scrolls smooth...even on retina! (desktop only)" data-via="dhg">Tweet</a>
+      <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+  <h3 class="error">Whoops! Right now this demo doesn't handle resizing or browsers less than 1000px wide. Reload this
+    page or get on a laptop!</h3>
+  <script src="{% static 'js\index\jquery-2.0.2.min.js' %}"></script>
+  <script src="{% static 'js\index\picasso.js' %}"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-20752697-1', 'davegamache.com');
+    ga('send', 'pageview');
+
+  </script>
+  {% endblock content %}
+</body>
+
+</html>

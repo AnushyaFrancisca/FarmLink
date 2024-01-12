@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Authenticate.urls')),
     path('Farmer',include('Farmer.urls')),
+    path('Admin_interface',include('Admin_interface.urls'))
 ]

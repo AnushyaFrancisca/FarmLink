@@ -37,3 +37,6 @@ def register(request):
         user_details.save()
         return redirect('login')
     return render(request, 'Authenticate/register.html')
+
+def about(request):
+    return render(request,'Authenticate/about.html')

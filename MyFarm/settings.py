@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Authenticate',
     'Farmer',
-    'Admin',
+    'Admin_interface',
 ]
 
 MIDDLEWARE = [
