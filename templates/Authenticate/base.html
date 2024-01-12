@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Farmlink</title>
+	<link rel="stylesheet" href="{% static 'css\main.css' %}">
+	<script src="{% static 'js\app.js' %}" defer></script>
+	<script src="{% static 'libs\rain.js' %}" defer></script>
+	<style>
+		.bg1{
+			background-image: url("{% static 'img\\layer-1.jpg' %}");
+		}
+		.bg2{
+			background-image: url("{% static 'img\\layer-2.png' %}");
+		}
+		.bg3{
+			background-image: url("{% static 'img\\layer-5.png' %}");
+		}
+		.bg4{
+			background-image: url("{% static 'img\\layer-6.png' %}");
+		}
+	</style>
+</head>
+<body>
+
+	<section class="layers">
+		<div class="layers__container">
+			<div class="layers__item layer-1 bg1"></div>
+			<div class="layers__item layer-2 bg2"></div>
+            <div class="layers__item layer-3">
+				<div class="hero-content">
+					<div class="logo-container">
+						<img src="{% static 'img\logo-01.png' %}" alt="FARMLINK" class="logo-image">
+					</div>
+					<div class="hero-content__p">A platform for farmers to interact with others and gain knowledge and ideas</div>
+					<button class="button-start">About Us</button>
+				</div>
+			</div>
+			<div class="layers__item layer-4">
+				<canvas class="rain"></canvas>
+			</div>
+			<div class="layers__item layer-5 bg3"></div>
+			<div class="layers__item layer-6 bg4"></div>
+		</div>
+    
+	</section>
+
+</body>
+</html>

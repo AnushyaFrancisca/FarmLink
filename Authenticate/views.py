@@ -40,3 +40,6 @@ def register(request):
 
 def about(request):
     return render(request,'Authenticate/about.html')
+
+def base(request):
+    return render(request,'Authenticate/base.html')
