@@ -15,8 +15,37 @@
   <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
   <style>
     .bg1{
-          background-image: url("{% static 'img\\index\\bg2.jpg' %}")
-    }
+          background-image: url("{% static 'img\\index\\bg2.jpg' %}");
+          filter: blur(5px); 
+          -webkit-filter: blur(5px);
+  } 
+
+    .bg2{
+			    background-image: url("{% static 'img\\layer-2.png' %}");
+          filter: blur(5px); 
+          -webkit-filter: blur(5px);
+	}
+		.bg3{
+			    background-image: url("{% static 'img\\layer-5.png' %}");
+          filter: blur(5px); 
+          -webkit-filter: blur(5px);
+	}
+		.bg4{
+			    background-image: url("{% static 'img\\layer-6.png' %}");
+          filter: blur(5px); 
+          -webkit-filter: blur(5px);
+		}
+    #explosion {
+    text-align: center;
+  }
+
+  .explosion-byline {
+    font-size: 23px; 
+    text-align: justify;
+    max-width: 600px; 
+    margin: 0 auto; 
+  }
+
   </style>
 </head>
 
@@ -25,7 +54,10 @@
   <div class="container">
     <div class="container-inner">
       <div class="background bg1"></div>
-      <section id="intro" class="wrapper">
+      <div class="background bg2"></div>
+      <div class="background bg3"></div>
+      <div class="background bg4"></div>
+     <section id="intro" class="wrapper">
         <h1 class="name">Welcome to FARMLINK</h1>
         <h2 class="byline">This is your gateway into a digital revolution, transforming the agricultural landscape like
           never before.</h2>
@@ -74,14 +106,6 @@
         <a class="btn" href="{% url 'register' %}">Sign Up</a>
       </section>
     </div>
-    <div class="twitter">
-      <a href="https://twitter.com/dhg" class="twitter-follow-button" data-show-count="false">Follow @dhg</a>
-      <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://davegamache.com/parallax"
-        data-text="A parallax demo that scrolls smooth...even on retina! (desktop only)" data-via="dhg">Tweet</a>
-      <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-    </div>
-  </div>
   <h3 class="error">Whoops! Right now this demo doesn't handle resizing or browsers less than 1000px wide. Reload this
     page or get on a laptop!</h3>
   <script src="{% static 'js\index\jquery-2.0.2.min.js' %}"></script>
