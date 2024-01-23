@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Authenticate',
     'Farmer',
     'Admin_interface',
+    'Government',
 ]
 
 MIDDLEWARE = [

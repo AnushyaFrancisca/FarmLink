@@ -26,12 +26,14 @@ def admin_dashboard(request):
 
 def register(request):
     if request.method == 'POST':
-        name=request.POST['name']
+        firstName=request.POST['firstName']
+        lastName=request.POST['lastName']
+        username=request.POST['username']
         email=request.POST['email']
-        password=request.POST['password']
         phone=request.POST['phone']
         role=request.POST['role']
-        user=User(first_name=name,username=email,email=email,password=make_password(password))
+        password=request.POST['password']
+        user=User(first_name=firstName,last_name=lastName,Username=username,Email=email,Phone=phone,Role=role,Password=make_password(password))
         user.save()
         user_details=userdetails(user_id=user.id, user_phone=phone,user_type=role)
         user_details.save()
