@@ -48,7 +48,7 @@
 }
 body {
 	background-color: #000;
-	color: #fff;
+	color:whitesmoke;
 	font-family: kamerik-3d;
 }
 .logo {
@@ -118,7 +118,7 @@ body {
 	font-size: calc(var(--index) * .73);
 	line-height: 3;
 }
-.button-start {
+.button-start{
 	font-family: Arial;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -133,6 +133,18 @@ body {
 	cursor: pointer;
 	margin-top: calc(var(--index) * 2.5);
 }
+
+a {
+	text-decoration: none;
+  }
+.no-underline {
+	text-decoration: none;
+  }
+.button-start a {
+	 color:whitesmoke ;
+}
+
 .layer-4, .layer-5, .layer-6 {
 	pointer-events: none;
+	text-decoration: none;
 }
