@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Authenticate.urls')),
     path('Farmer',include('Farmer.urls')),
-    path('Admin_interface',include('Admin_interface.urls'))
+    path('Admin_interface',include('Admin_interface.urls')),
+    path('Government',include('Government.urls')),
+    path('User',include('User.urls')),
 ]
