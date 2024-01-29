@@ -1,12 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password  # for encryption of password
-
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
 from Authenticate.models import userdetails
-
 from builtins import print
+
 
 # Create your views here.
 def userlogin(request):
@@ -29,14 +27,17 @@ def userlogin(request):
 
             if details:
 
-                if details and details.user_type == 'Official':
-                    return redirect('government-home')
+                profile_url = f'{details.user_type.lower()}-profile'
+                return redirect(profile_url)
 
-                elif details and details.user_type == 'Farmer':
-                    return redirect('farmer-home')
+                # if details and details.user_type == 'Official':
+                #     return redirect('government-home')
+
+                # elif details and details.user_type == 'Farmer':
+                #     return redirect('farmer-home')
                 
-                elif details and details.user_type == 'Others':
-                    return redirect('user-home')
+                # elif details and details.user_type == 'Others':
+                #     return redirect('user-home')
             
         else:
             msg = "wrong Credentials"
@@ -86,3 +87,4 @@ def about(request):
 
 def base(request):
     return render(request, 'Authenticate/base.html')
+
