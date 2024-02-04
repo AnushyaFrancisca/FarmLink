@@ -1,11 +1,909 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Government Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+    <link rel='stylesheet' id='contact-form-7-css'
+        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css'
+        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.8.0'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'
+        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.8.0'
+        type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'
+        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=7.8.0'
+        type='text/css' media='all' />
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='mfn-be-css'
+        href='https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/css/be.css?ver=27.1' type='text/css'
+        media='all' />
+    <style>
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #FDF4E9;
+            overflow-x: hidden;
+        }
+
+        html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            position: absolute;
+            top: 20px;
+            left: 18px;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #navbar a {
+            font-size: 0.9rem;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: none;
+            color: white;
+            padding: 6px 15px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        #navbar a.active::before,
+        #navbar a:hover::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            /* Adjust the distance of the line from the text */
+            left: 10px;
+            width: 78%;
+            height: 2px;
+            /* Adjust the thickness of the line */
+            background-color: rgb(234, 4, 4);
+        }
+
+        #navbar a.active {
+            color: rgb(255, 255, 255);
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-right: 300px;
+        }
+
+        .icons i {
+            font-size: 1.5rem;
+            color: white;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+
+        .column_header_icon {
+            margin-left: 200px;
+            /* You can adjust the value based on your preference */
+        }
+
+        .mcb-section-wuq104o9p .mcb-section-inner-wuq104o9p {
+            align-items: center;
+        }
+
+        .mcb-section-wuq104o9p {
+            background-color: #391F1E;
+        }
+
+        .mcb-section .mcb-wrap-vzf9ixw7r {
+            flex-grow: 1;
+            flex: 0 0 15%;
+        }
+
+        .mcb-section .mcb-wrap-vzf9ixw7r .mcb-wrap-inner-vzf9ixw7r {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-6grl7fzeh .logo-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-6grl7fzeh {
+            flex: 0 0 60px;
+            max-width: 60px;
+        }
+
+        .mcb-section .mcb-wrap-xlauyglp8 {
+            flex-grow: 1;
+        }
+
+        .mcb-section .mcb-wrap-xlauyglp8 .mcb-wrap-inner-xlauyglp8 {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mfn-header-tmpl-menu-sidebar .mfn-header-tmpl-menu-sidebar-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mfn-header-tmpl-menu-sidebar .mfn-close-icon {
+            font-size: 20px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .icon-wrapper i {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .desc-wrapper {
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mcb-column-inner-wrcpnigdjw {
+            border-radius: 6px 6px 6px 6px;
+            border-style: solid;
+            border-color: #FFFFFF;
+            border-width: 2px 2px 2px 2px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mfn-icon-box:hover .desc-wrapper {
+            color: #E2E2E2;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wrcpnigdjw .mfn-icon-box:hover .icon-wrapper i {
+            color: #E2E2E2;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-fkbavikxl .mfn-header-menu {
+            justify-content: space-evenly;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-fkbavikxl .mfn-header-menu>li.mfn-menu-li {
+            flex-grow: unset;
+            --mfn-header-menu-animation-color: #EC4E20;
+            --mfn-header-menu-animation-height: 1px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-fkbavikxl .mfn-header-menu>li.mfn-menu-li>a.mfn-menu-link {
+            color: #FFFFFF;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        .mcb-section .mcb-wrap-7jz9f8xna {
+            flex-grow: 1;
+            flex: 0 0 15%;
+        }
+
+        .mcb-section .mcb-wrap-7jz9f8xna .mcb-wrap-inner-7jz9f8xna {
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wcd4ju26l .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-wcd4ju26l .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wcd4ju26l .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-wcd4ju26l .mcb-column-inner-wcd4ju26l {
+            margin-right: 32px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bjo6quy4f .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-bjo6quy4f .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bjo6quy4f .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bjo6quy4f .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bjo6quy4f .desc-wrapper {
+            font-weight: 600;
+        }
+
+        .mcb-section-pfvz7re1 .mcb-section-inner-pfvz7re1 {
+            align-items: center;
+        }
+
+        .mfn-header-tmpl .mcb-section-pfvz7re1 {
+            transition: background 0.3s;
+        }
+
+        .mfn-header-scrolled .mfn-header-tmpl .mcb-section-pfvz7re1 {
+            background-color: #391F1E;
+        }
+
+        .mcb-section .mcb-wrap-eaxqncm3v {
+            flex-grow: 1;
+        }
+
+        .mcb-section .mcb-wrap-eaxqncm3v .mcb-wrap-inner-eaxqncm3v {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-rg8e16dnr .logo-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-rg8e16dnr {
+            flex: 0 0 250px;
+            max-width: 250px;
+        }
+
+        .mcb-section .mcb-wrap-pupnbkxnl {
+            flex-grow: 1;
+        }
+
+        .mcb-section .mcb-wrap-pupnbkxnl .mcb-wrap-inner-pupnbkxnl {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-we7r7n8dl .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-we7r7n8dl .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-we7r7n8dl .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v6nlwhfwd .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-v6nlwhfwd .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v6nlwhfwd .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v6nlwhfwd .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v6nlwhfwd .desc-wrapper {
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v518cwk49 .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-v518cwk49 .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v518cwk49 .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v518cwk49 .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-v518cwk49 .desc-wrapper {
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-7fklnkmg .mfn-header-tmpl-menu-sidebar .mfn-header-tmpl-menu-sidebar-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-7fklnkmg .mfn-header-tmpl-menu-sidebar .mfn-close-icon {
+            font-size: 20px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar .mfn-header-tmpl-menu-sidebar-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar .mfn-close-icon {
+            font-size: 24px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .icon-wrapper i {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar {
+            background-color: #391F1E;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar .mfn-header-menu>li>a {
+            color: #FFFFFF;
+            border-style: none;
+            border-color: rgba(0, 0, 0, 0);
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar .mfn-header-menu>li.current-menu-item>a {
+            border-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-menu-li>.mfn-menu-link .label-wrapper:before {
+            --mfn-header-menu-animation-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dgh102vjs .mfn-header-tmpl-menu-sidebar .mfn-header-menu-toggle .icon {
+            color: #FFFFFF;
+        }
+
+        .mcb-section-miiz0qrse .mcb-section-inner-miiz0qrse {
+            align-items: center;
+        }
+
+        .mcb-section-miiz0qrse {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .mfn-header-tmpl .mcb-section-miiz0qrse {
+            transition: background 0.3s;
+        }
+
+        .mcb-section .mcb-wrap-g233hn6ol {
+            flex-grow: 1;
+            flex: 0 0 45%;
+        }
+
+        .mcb-section .mcb-wrap-g233hn6ol .mcb-wrap-inner-g233hn6ol {
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mfn-header-tmpl-menu-sidebar .mfn-header-tmpl-menu-sidebar-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mfn-header-tmpl-menu-sidebar .mfn-close-icon {
+            font-size: 20px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .icon-wrapper i {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .desc-wrapper {
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mcb-column-inner-bruidsx57 {
+            border-radius: 6px 6px 6px 6px;
+            border-style: solid;
+            border-color: #FFFFFF;
+            border-width: 2px 2px 2px 2px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mfn-icon-box:hover .desc-wrapper {
+            color: #E2E2E2;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-bruidsx57 .mfn-icon-box:hover .icon-wrapper i {
+            color: #E2E2E2;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-0yboayuxs .mfn-header-menu {
+            justify-content: flex-start;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-0yboayuxs .mfn-header-menu>li.mfn-menu-li>a.mfn-menu-link {
+            color: #FFFFFF;
+            border-style: none;
+            border-width: 2px 2px 2px 2px;
+            border-color: rgba(255, 255, 255, 0);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-0yboayuxs .mfn-header-menu>li.mfn-menu-li:hover>a.mfn-menu-link {
+            border-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-0yboayuxs .mfn-header-menu>li.current-menu-item>a.mfn-menu-link {
+            border-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-0yboayuxs .mfn-header-menu>li.mfn-menu-li {
+            --mfn-header-menu-gap: 2px;
+            flex-grow: unset;
+            --mfn-header-menu-animation-color: #EC4E20;
+            --mfn-header-menu-animation-height: 2px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-header-tmpl-menu-sidebar-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-close-icon {
+            font-size: 24px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .icon-wrapper i {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar {
+            background-color: #391F1E;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-header-menu>li>a {
+            color: #FFFFFF;
+            border-style: none;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-header-menu>li.current-menu-item>a {
+            border-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-menu-li>.mfn-menu-link .label-wrapper:before {
+            --mfn-header-menu-animation-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-header-menu-toggle .icon {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap-6uu4j7tyj {
+            flex-grow: 1;
+        }
+
+        .mcb-section .mcb-wrap-6uu4j7tyj .mcb-wrap-inner-6uu4j7tyj {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-1g29bpxlx .logo-wrapper {
+            align-items: center;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-1g29bpxlx {
+            flex: 0 0 100px;
+            max-width: 100px;
+        }
+
+        .mcb-section .mcb-wrap-d782q0jk6 {
+            flex-grow: 1;
+            flex: 0 0 45%;
+        }
+
+        .mcb-section .mcb-wrap-d782q0jk6 .mcb-wrap-inner-d782q0jk6 {
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dbw27yoxt .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-dbw27yoxt .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-dbw27yoxt .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-3dgyi46d3d .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-3dgyi46d3d .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-3dgyi46d3d .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-3dgyi46d3d .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-3dgyi46d3d .desc-wrapper {
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-y5zt83yhd .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-y5zt83yhd .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-y5zt83yhd .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-y5zt83yhd .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-y5zt83yhd .desc-wrapper {
+            font-weight: 600;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-eqkhp4dtr .mfn-icon-box .icon-wrapper .header-cart-count,
+        .mcb-section .mcb-wrap .mcb-item-eqkhp4dtr .mfn-icon-box .icon-wrapper .header-wishlist-count {
+            top: -9px;
+            right: -11px;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-eqkhp4dtr .icon-wrapper {
+            --mfn-header-icon-color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-eqkhp4dtr .mfn-icon-box .desc-wrapper {
+            color: #FFFFFF;
+        }
+
+        .mcb-section .mcb-wrap .mcb-item-eqkhp4dtr .desc-wrapper {
+            font-weight: 600;
+        }
+
+        /* Styles for the popup */
+
+        #logoutPopup {
+            display: none;
+            position: fixed;
+            top: 180px;
+            left: 1269px;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            max-width: 80%;
+            background: rgba(255, 255, 255, 0.1);/* Transparent white background */
+            padding: 20px;
+            border: 2px solid white; /* White border */
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-family: 'Times New Roman', Times, serif; /* Change the font as needed */
+        }
+
+        .popup-content {
+            width: 100%;
+            display: block;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .logout-confirm-btn {
+            background-color: rgb(99, 153, 105);
+            color: rgb(255, 255, 255);
+            padding: 5px 20px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .logout-confirm-btn:hover {
+            background-color: #ddd; /* Light gray on hover */
+        }
+
+    </style>
 </head>
 <body>
-    Government  dashboard
+    <header id="mfn-header-template" data-id="36" data-mobile-type="" data-type="absolute"
+    class="mfn-header-tmpl mfn-header-main mfn-header-tmpl-absolute mfn-hasSticky mfn-hasMobile mfn-mobile-header-tmpl-fixed">
+        <div id="navbar">
+            <div>
+                <a href="{% url 'policies' %}" class="active">BLOG</a>
+                <a href="{% url 'post' %}">ADD POST</a>
+            </div>
+            <div class="icons">
+                <!-- Add your profile and search icons or replace with appropriate icon libraries -->
+
+
+            
+            <div class="mfn-builder-content mfn-header-tmpl-builder">
+                <div class="section mcb-section mfn-header-mobile-section mcb-section-pfvz7re1 mcb-header-section close-button-left default-width show-on-scroll"
+                    style="">
+                    <div class="mcb-background-overlay"></div>
+                    <div class="section_wrapper mcb-section-inner mcb-section-inner-pfvz7re1">
+                        <div class="wrap mcb-wrap mcb-wrap-eaxqncm3v mcb-header-wrap one-second tablet-one-second mobile-one clearfix"
+                            data-desktop-col="one-second" data-tablet-col="tablet-one-second"
+                            data-mobile-col="mobile-one" style="">
+                            <div class="mcb-wrap-inner mcb-wrap-inner-eaxqncm3v">
+                                <div class="mcb-wrap-background-overlay"></div>
+                                <div class="column mcb-column mcb-item-rg8e16dnr one tablet-one mobile-one column_header_logo mfn-item-custom-width"
+                                    style="">
+                                    <div class="mcb-column-inner mcb-column-inner-rg8e16dnr mcb-item-header_logo-inner">
+                                        <a class="logo-wrapper" href="https://themes.muffingroup.com/be/barbeque"><img
+                                                src="https://themes.muffingroup.com/be/barbeque/wp-content/uploads/2023/03/barbeque-logo.svg"
+                                                alt="barbeque-logo" width="101" height="101"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap mcb-wrap mcb-wrap-pupnbkxnl mcb-header-wrap one-second tablet-one-second mobile-one clearfix"
+                            data-desktop-col="one-second" data-tablet-col="tablet-one-second"
+                            data-mobile-col="mobile-one" style="">
+                            <div class="mcb-wrap-inner mcb-wrap-inner-pupnbkxnl">
+                                <div class="mcb-wrap-background-overlay"></div>
+                                <div class="column mcb-column mcb-item-we7r7n8dl one tablet-one mobile-one column_header_icon mfn-item-inline"
+                                    style="">
+                                    <div class="mcb-column-inner mcb-column-inner-we7r7n8dl mcb-item-header_icon-inner">
+                                        <div class="search_wrapper">
+                                            <form method="get" class="form-searchform"
+                                                action="blog.html">
+
+
+                                                <svg class="icon_search" width="26" viewBox="0 0 26 26"
+                                                    aria-label="search icon">
+                                                    <defs>
+                                                        <style>
+                                                            .path {
+                                                                fill: none;
+                                                                stroke: #000;
+                                                                stroke-miterlimit: 10;
+                                                                stroke-width: 1.5px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <circle class="path" cx="11.35" cy="11.35" r="6"></circle>
+                                                    <line class="path" x1="15.59" y1="15.59" x2="20.65" y2="20.65">
+                                                    </line>
+                                                </svg>
+                                                <span class="mfn-close-icon icon_close" tabindex="0"><span
+                                                        class="icon">✕</span></span>
+
+
+                                                <input type="text" class="field" name="s" autocomplete="off"
+                                                    placeholder="Enter your search" />
+                                                <input type="submit" class="display-none" value="" />
+
+                                            </form>
+
+                                            <div class="mfn-live-search-box" style="display:none">
+
+                                                <ul class="mfn-live-search-list">
+                                                    <li class="mfn-live-search-list-categories">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-shop">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-blog">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-pages">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-portfolio">
+                                                        <ul></ul>
+                                                    </li>
+                                                </ul>
+
+                                                <span class="mfn-live-search-noresults">No results</span>
+
+                                                <a class="button button_theme hidden">See all results</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section mcb-section mfn-default-section mcb-section-miiz0qrse mcb-header-section close-button-left default-width show-on-scroll"
+                    style="">
+                    <div class="mcb-background-overlay"></div>
+                    <div class="section_wrapper mcb-section-inner mcb-section-inner-miiz0qrse">
+                        <div class="wrap mcb-wrap mcb-wrap-g233hn6ol mcb-header-wrap one-third tablet-one-third mobile-one mfn-item-custom-width clearfix"
+                            data-desktop-col="" data-tablet-col="tablet-one-third" data-mobile-col="mobile-one"
+                            style="">
+                            <div class="mcb-wrap-inner mcb-wrap-inner-g233hn6ol">
+                                <div class="mcb-wrap-background-overlay"></div>
+
+                                <div class="column mcb-column mcb-item-0yboayuxs one tablet-one mobile-one column_header_menu mfn-item-inline  hide-tablet hide-mobile"
+                                    style="">
+                                    <div class="mcb-column-inner mcb-column-inner-0yboayuxs mcb-item-header_menu-inner">
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="wrap mcb-wrap mcb-wrap-d782q0jk6 mcb-header-wrap one-third tablet-one-third mobile-one mfn-item-custom-width clearfix"
+                            data-desktop-col="" data-tablet-col="tablet-one-third" data-mobile-col="mobile-one"
+                            style="">
+                            <div class="mcb-wrap-inner mcb-wrap-inner-d782q0jk6">
+                                <div class="mcb-wrap-background-overlay"></div>
+                                <div class="column mcb-column mcb-item-dbw27yoxt one tablet-one mobile-one column_header_icon mfn-item-inline"
+                                    style="">
+                                    <div class="mcb-column-inner mcb-column-inner-dbw27yoxt mcb-item-header_icon-inner">
+                                        <div class="search_wrapper">
+                                            <form method="get" class="form-searchform"
+                                                action="blog.html">
+
+
+                                                <svg class="icon_search" width="26" viewBox="0 0 26 26"
+                                                    aria-label="search icon">
+                                                    <defs>
+                                                        <style>
+                                                            .path {
+                                                                fill: none;
+                                                                stroke: #000;
+                                                                stroke-miterlimit: 10;
+                                                                stroke-width: 1.5px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <circle class="path" cx="11.35" cy="11.35" r="6"></circle>
+                                                    <line class="path" x1="15.59" y1="15.59" x2="20.65" y2="20.65">
+                                                    </line>
+                                                </svg>
+                                                <span class="mfn-close-icon icon_close" tabindex="0"><span
+                                                        class="icon">✕</span></span>
+
+
+                                                <input type="text" class="field" name="s" autocomplete="off"
+                                                    placeholder="Enter your search" />
+
+                                            </form>
+
+                                            <div class="mfn-live-search-box" style="display:none">
+
+                                                <ul class="mfn-live-search-list">
+                                                    <li class="mfn-live-search-list-categories">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-shop">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-blog">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-pages">
+                                                        <ul></ul>
+                                                    </li>
+                                                    <li class="mfn-live-search-list-portfolio">
+                                                        <ul></ul>
+                                                    </li>
+                                                </ul>
+
+                                                <span class="mfn-live-search-noresults">No results</span>
+
+                                                <a class="button button_theme hidden">See all results</a>
+
+                                            </div>
+                                        </div>
+
+                                        
+                                        <a href="#"
+                                            class="mfn-icon-box mfn-header-icon-box mfn-icon-box-top mfn-icon-box-center mfn-header-search-link mfn-search-button mfn-searchbar-toggle mfn-icon-box-empty-desc">
+                                            
+                                            <div class="icon-wrapper"><i class='bx bx-search-alt'></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- <i class='bx bx-user'></i> -->
+                                
+                                <div class="icon-wrapper" id="userIcon" style="z-index: 1000;" onclick="openLogoutPopup()">
+                                    <i class='bx bx-user'></i>
+                                </div>
+                                
+                                
+                                <!-- The Logout Popup -->
+                                <div id="logoutPopup" class="popup">
+                                    <div class="popup-content">
+                                        <span class="close" onclick="closeLogoutPopup()">&times;</span>
+                                        <h3>Logout Confirmation</h3>
+                                        <p>Are you sure you want to logout?</p>
+                                        <button id="logout-btn" class="logout-confirm-btn" onclick="logout()" style="font-family: 'Times New Roman', Times, serif;"><a href=" {% url 'logout' %}">LOGOUT</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+
+    </div>
+
+    </header>
+
+    {% include 'Government/policies.html' %}
+
+    <script type="text/javascript"
+        src="https://themes.muffingroup.com/be/barbeque/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+        id="jquery-core-js"></script>
+    <script type="text/javascript"
+        src="https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/js/menu.js?ver=27.1"
+        id="mfn-menu-js"></script>
+    <script type="text/javascript" id="mfn-scripts-js-extra">
+        /* <![CDATA[ */
+        var mfn_livesearch_categories = { "https:\/\/themes.muffingroup.com\/be\/barbeque\/category\/uncategorized\/": "Uncategorized", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/gas-grills\/": "Gas grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/charcoal-grills\/": "Charcoal Grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/electric-grills\/": "Electric grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/smokers\/": "Smokers" };
+        var mfn = { "mobileInit": "1240", "parallax": "translate3d", "responsive": "1", "sidebarSticky": "", "lightbox": { "disable": false, "disableMobile": false, "title": false }, "slider": { "blog": 0, "clients": 0, "offer": 0, "portfolio": 0, "shop": 0, "slider": 0, "testimonials": 0 }, "livesearch": { "minChar": 3, "loadPosts": 10, "translation": { "pages": "Pages", "categories": "Categories", "portfolio": "Portfolio", "post": "Posts", "products": "Products" } }, "accessibility": { "translation": { "headerContainer": "Header container", "toggleSubmenu": "Toggle submenu" } }, "home_url": "\/be\/barbeque", "home_url_lang": "https:\/\/themes.muffingroup.com\/be\/barbeque", "site_url": "https:\/\/themes.muffingroup.com\/be\/barbeque" };
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/js/scripts.js?ver=27.1"
+        id="mfn-scripts-js"></script>
+
+    <script>
+        function logout() {
+            document.getElementById('logout-btn').click();
+            alert("Logout successful!"); 
+        }
+
+        // Function to open the logout popup
+        function openLogoutPopup() {
+            document.getElementById("logoutPopup").style.display = "block";
+        }
+
+        // Function to close the logout popup
+        function closeLogoutPopup() {
+            document.getElementById("logoutPopup").style.display = "none";
+        }
+
+        // Function to handle the logout action (replace with your actual logout logic)
+
+
+    </script>
 </body>
 </html>

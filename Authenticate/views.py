@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password  # for encryption of password
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from Authenticate.models import userdetails
+from .models import userdetails
 from builtins import print
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -13,31 +14,28 @@ def userlogin(request):
         password = request.POST['password']
 
         user =  authenticate(request,username=username, password=password)
+       
+        
 
-        if user is not None:
-            login(request, user)
+        if user is not None and user.is_active:
 
             if user.is_superuser:
+                login(request, user)
                 return redirect('admin-dashboard')
 
-            try:
-                details = userdetails.objects.get(user_id=user.id)
-            except:
-                details = None
+            details = userdetails.objects.get(user = user)
+           
+            if details.user_type == 'Official':
+                login(request, user)
+                return redirect('official-profile')
 
-            if details:
-
-                profile_url = f'{details.user_type.lower()}-profile'
-                return redirect(profile_url)
-
-                # if details and details.user_type == 'Official':
-                #     return redirect('government-home')
-
-                # elif details and details.user_type == 'Farmer':
-                #     return redirect('farmer-home')
+            elif details.user_type == 'Farmer':
+                login(request, user)
+                return redirect('farmer-profile')
                 
-                # elif details and details.user_type == 'Others':
-                #     return redirect('user-home')
+            elif details and details.user_type == 'Others':
+                login(request, user)
+                return redirect('user-profile')
             
         else:
             msg = "wrong Credentials"
@@ -54,7 +52,7 @@ def register(request):
     if request.method == 'POST':
         firstName = request.POST['firstName']
         lastName = request.POST['lastName']
-        username = request.POST['username']  # Add this line
+        username = request.POST['username']  
         email = request.POST['email']
         phone = request.POST['phone']
         role = request.POST['role']
