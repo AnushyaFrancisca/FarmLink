@@ -1,6 +1,4 @@
-
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,41 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Government Page</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 
-    <link rel='stylesheet' id='contact-form-7-css'
-        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='woocommerce-layout-css'
-        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.8.0'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='woocommerce-smallscreen-css'
-        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.8.0'
-        type='text/css' media='only screen and (max-width: 768px)' />
-    <link rel='stylesheet' id='woocommerce-general-css'
-        href='https://themes.muffingroup.com/be/barbeque/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=7.8.0'
-        type='text/css' media='all' />
-    <style id='woocommerce-inline-inline-css' type='text/css'>
-        .woocommerce form .form-row .required {
-            visibility: visible;
-        }
-    </style>
-    <link rel='stylesheet' id='mfn-be-css'
-        href='https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/css/be.css?ver=27.1' type='text/css'
-        media='all' />
     <style>
         
-        body {
-            margin: 0;
-            height: 100vh;
-            background-color: #FDF4E9;
-            overflow-x: hidden;
-        }
-
-        html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-        }
+    
 
         #navbar {
             display: flex;
@@ -53,7 +20,7 @@
             top: 20px;
             left: 18px;
             width: 100%;
-            z-index: 1000;
+            z-index: 10;
         }
 
         #navbar a {
@@ -87,7 +54,7 @@
         .icons {
             display: flex;
             align-items: center;
-            margin-right: 300px;
+            margin-right: 100px;
         }
 
         .icons i {
@@ -469,6 +436,12 @@
         .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar {
             background-color: #391F1E;
         }
+/* 
+        .mcb-section-9pog48gye {
+            background-color: #FDF4E9;
+            padding-bottom: 160px;
+            padding-top: 100px;
+        } */
 
         .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar .mfn-header-menu>li>a {
             color: #FFFFFF;
@@ -636,15 +609,95 @@
         .logout-confirm-btn:hover {
             background-color: #ddd; /* Light gray on hover */
         }
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: #FDF4E9;
+        }
+
+        .img-layer {
+            position: absolute;
+            /* Change 'fixed' to 'absolute' */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg1 {
+            background-image: url("{% static 'img\\government\\bg-1.png' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bg2 {
+            background-image: url("{% static 'img\\government\\bg-2.png' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: 100;
+            z-index: 1;
+        }
+
+        .blog-container {
+            max-width: 600px;
+            margin: 70px 20px 20px 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .blog-container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit:cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .post-details {
+            font-size: 12px;
+            font-weight: normal;
+            color: #888;
+        }
 
     </style>
 </head>
 <body>
-    <header id="mfn-header-template" data-id="36" data-mobile-type="" data-type="absolute"
-    class="mfn-header-tmpl mfn-header-main mfn-header-tmpl-absolute mfn-hasSticky mfn-hasMobile mfn-mobile-header-tmpl-fixed">
+<header id="mfn-header-template" data-id="36" data-mobile-type="" data-type="absolute"
+            class="mfn-header-tmpl mfn-header-main mfn-header-tmpl-absolute mfn-hasSticky mfn-hasMobile mfn-mobile-header-tmpl-fixed">
         <div id="navbar">
             <div>
-                <a href="{% url 'policies' %}" class="active">BLOG</a>
+                <a href="{% url 'official-profile' %}" class="active">BLOG</a>
                 <a href="{% url 'post' %}">ADD POST</a>
             </div>
             <div class="icons">
@@ -653,193 +706,21 @@
 
             
             <div class="mfn-builder-content mfn-header-tmpl-builder">
-                <div class="section mcb-section mfn-header-mobile-section mcb-section-pfvz7re1 mcb-header-section close-button-left default-width show-on-scroll"
-                    style="">
-                    <div class="mcb-background-overlay"></div>
-                    <div class="section_wrapper mcb-section-inner mcb-section-inner-pfvz7re1">
-                        <div class="wrap mcb-wrap mcb-wrap-eaxqncm3v mcb-header-wrap one-second tablet-one-second mobile-one clearfix"
-                            data-desktop-col="one-second" data-tablet-col="tablet-one-second"
-                            data-mobile-col="mobile-one" style="">
-                            <div class="mcb-wrap-inner mcb-wrap-inner-eaxqncm3v">
-                                <div class="mcb-wrap-background-overlay"></div>
-                                <div class="column mcb-column mcb-item-rg8e16dnr one tablet-one mobile-one column_header_logo mfn-item-custom-width"
-                                    style="">
-                                    <div class="mcb-column-inner mcb-column-inner-rg8e16dnr mcb-item-header_logo-inner">
-                                        <a class="logo-wrapper" href="https://themes.muffingroup.com/be/barbeque"><img
-                                                src="https://themes.muffingroup.com/be/barbeque/wp-content/uploads/2023/03/barbeque-logo.svg"
-                                                alt="barbeque-logo" width="101" height="101"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrap mcb-wrap mcb-wrap-pupnbkxnl mcb-header-wrap one-second tablet-one-second mobile-one clearfix"
-                            data-desktop-col="one-second" data-tablet-col="tablet-one-second"
-                            data-mobile-col="mobile-one" style="">
-                            <div class="mcb-wrap-inner mcb-wrap-inner-pupnbkxnl">
-                                <div class="mcb-wrap-background-overlay"></div>
-                                <div class="column mcb-column mcb-item-we7r7n8dl one tablet-one mobile-one column_header_icon mfn-item-inline"
-                                    style="">
-                                    <div class="mcb-column-inner mcb-column-inner-we7r7n8dl mcb-item-header_icon-inner">
-                                        <div class="search_wrapper">
-                                            <form method="get" class="form-searchform"
-                                                action="blog.html">
-
-
-                                                <svg class="icon_search" width="26" viewBox="0 0 26 26"
-                                                    aria-label="search icon">
-                                                    <defs>
-                                                        <style>
-                                                            .path {
-                                                                fill: none;
-                                                                stroke: #000;
-                                                                stroke-miterlimit: 10;
-                                                                stroke-width: 1.5px;
-                                                            }
-                                                        </style>
-                                                    </defs>
-                                                    <circle class="path" cx="11.35" cy="11.35" r="6"></circle>
-                                                    <line class="path" x1="15.59" y1="15.59" x2="20.65" y2="20.65">
-                                                    </line>
-                                                </svg>
-                                                <span class="mfn-close-icon icon_close" tabindex="0"><span
-                                                        class="icon">✕</span></span>
-
-
-                                                <input type="text" class="field" name="s" autocomplete="off"
-                                                    placeholder="Enter your search" />
-                                                <input type="submit" class="display-none" value="" />
-
-                                            </form>
-
-                                            <div class="mfn-live-search-box" style="display:none">
-
-                                                <ul class="mfn-live-search-list">
-                                                    <li class="mfn-live-search-list-categories">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-shop">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-blog">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-pages">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-portfolio">
-                                                        <ul></ul>
-                                                    </li>
-                                                </ul>
-
-                                                <span class="mfn-live-search-noresults">No results</span>
-
-                                                <a class="button button_theme hidden">See all results</a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="section mcb-section mfn-default-section mcb-section-miiz0qrse mcb-header-section close-button-left default-width show-on-scroll"
                     style="">
-                    <div class="mcb-background-overlay"></div>
-                    <div class="section_wrapper mcb-section-inner mcb-section-inner-miiz0qrse">
-                        <div class="wrap mcb-wrap mcb-wrap-g233hn6ol mcb-header-wrap one-third tablet-one-third mobile-one mfn-item-custom-width clearfix"
-                            data-desktop-col="" data-tablet-col="tablet-one-third" data-mobile-col="mobile-one"
-                            style="">
-                            <div class="mcb-wrap-inner mcb-wrap-inner-g233hn6ol">
-                                <div class="mcb-wrap-background-overlay"></div>
-
-                                <div class="column mcb-column mcb-item-0yboayuxs one tablet-one mobile-one column_header_menu mfn-item-inline  hide-tablet hide-mobile"
-                                    style="">
-                                    <div class="mcb-column-inner mcb-column-inner-0yboayuxs mcb-item-header_menu-inner">
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                
 
                         <div class="wrap mcb-wrap mcb-wrap-d782q0jk6 mcb-header-wrap one-third tablet-one-third mobile-one mfn-item-custom-width clearfix"
                             data-desktop-col="" data-tablet-col="tablet-one-third" data-mobile-col="mobile-one"
                             style="">
                             <div class="mcb-wrap-inner mcb-wrap-inner-d782q0jk6">
                                 <div class="mcb-wrap-background-overlay"></div>
-                                <div class="column mcb-column mcb-item-dbw27yoxt one tablet-one mobile-one column_header_icon mfn-item-inline"
-                                    style="">
-                                    <div class="mcb-column-inner mcb-column-inner-dbw27yoxt mcb-item-header_icon-inner">
-                                        <div class="search_wrapper">
-                                            <form method="get" class="form-searchform"
-                                                action="blog.html">
-
-
-                                                <svg class="icon_search" width="26" viewBox="0 0 26 26"
-                                                    aria-label="search icon">
-                                                    <defs>
-                                                        <style>
-                                                            .path {
-                                                                fill: none;
-                                                                stroke: #000;
-                                                                stroke-miterlimit: 10;
-                                                                stroke-width: 1.5px;
-                                                            }
-                                                        </style>
-                                                    </defs>
-                                                    <circle class="path" cx="11.35" cy="11.35" r="6"></circle>
-                                                    <line class="path" x1="15.59" y1="15.59" x2="20.65" y2="20.65">
-                                                    </line>
-                                                </svg>
-                                                <span class="mfn-close-icon icon_close" tabindex="0"><span
-                                                        class="icon">✕</span></span>
-
-
-                                                <input type="text" class="field" name="s" autocomplete="off"
-                                                    placeholder="Enter your search" />
-
-                                            </form>
-
-                                            <div class="mfn-live-search-box" style="display:none">
-
-                                                <ul class="mfn-live-search-list">
-                                                    <li class="mfn-live-search-list-categories">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-shop">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-blog">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-pages">
-                                                        <ul></ul>
-                                                    </li>
-                                                    <li class="mfn-live-search-list-portfolio">
-                                                        <ul></ul>
-                                                    </li>
-                                                </ul>
-
-                                                <span class="mfn-live-search-noresults">No results</span>
-
-                                                <a class="button button_theme hidden">See all results</a>
-
-                                            </div>
-                                        </div>
-
-                                        
-                                        <a href="#"
-                                            class="mfn-icon-box mfn-header-icon-box mfn-icon-box-top mfn-icon-box-center mfn-header-search-link mfn-search-button mfn-searchbar-toggle mfn-icon-box-empty-desc">
-                                            
-                                            <div class="icon-wrapper"><i class='bx bx-search-alt'></i></div>
-                                        </a>
-                                    </div>
-                                </div>
+                                
 
                                 <!-- <i class='bx bx-user'></i> -->
                                 
-                                <div class="icon-wrapper" id="userIcon" style="z-index: 1000;" onclick="openLogoutPopup()">
+                                <div class="icon-wrapper" id="userIcon" style="z-index: 10;" onclick="openLogoutPopup()">
                                     <i class='bx bx-user'></i>
                                 </div>
                                 
@@ -867,23 +748,30 @@
 
     </header>
 
-    {% include 'Government/policies.html' %}
+    <div class="img-layer bg1"></div>
+    <div class="img-layer bg2"></div>
 
-    <script type="text/javascript"
-        src="https://themes.muffingroup.com/be/barbeque/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
-        id="jquery-core-js"></script>
-    <script type="text/javascript"
-        src="https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/js/menu.js?ver=27.1"
-        id="mfn-menu-js"></script>
-    <script type="text/javascript" id="mfn-scripts-js-extra">
-        /* <![CDATA[ */
-        var mfn_livesearch_categories = { "https:\/\/themes.muffingroup.com\/be\/barbeque\/category\/uncategorized\/": "Uncategorized", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/gas-grills\/": "Gas grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/charcoal-grills\/": "Charcoal Grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/electric-grills\/": "Electric grills", "https:\/\/themes.muffingroup.com\/be\/barbeque\/product-category\/smokers\/": "Smokers" };
-        var mfn = { "mobileInit": "1240", "parallax": "translate3d", "responsive": "1", "sidebarSticky": "", "lightbox": { "disable": false, "disableMobile": false, "title": false }, "slider": { "blog": 0, "clients": 0, "offer": 0, "portfolio": 0, "shop": 0, "slider": 0, "testimonials": 0 }, "livesearch": { "minChar": 3, "loadPosts": 10, "translation": { "pages": "Pages", "categories": "Categories", "portfolio": "Portfolio", "post": "Posts", "products": "Products" } }, "accessibility": { "translation": { "headerContainer": "Header container", "toggleSubmenu": "Toggle submenu" } }, "home_url": "\/be\/barbeque", "home_url_lang": "https:\/\/themes.muffingroup.com\/be\/barbeque", "site_url": "https:\/\/themes.muffingroup.com\/be\/barbeque" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://themes.muffingroup.com/be/barbeque/wp-content/themes/betheme/js/scripts.js?ver=27.1"
-        id="mfn-scripts-js"></script>
+    <h1
+        style="text-align: center; color: white; margin-top: 135px; font-size: 4rem; font-family:'Times New Roman', Times, serif; font-weight: 100;">
+        POLICIES & SCHEMES</h1>
+        <br>
+        <br> 
+        <div class="blog-container">
+            {% for post in posts %}
+            <img class="blog-image" src="{{ post.image.url }}" alt="{{ post.title }} Image">
+            <div class="blog-content">
+                <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <p>Posted on: <span class="postt-details">{{ post.timestamp }}</span>  &nbsp  &nbsp
+                    For more details refer: <a href="{{ post.website_link }}" class="postt-details" target="_blank"> {{ post.website_link }}</a>
+            </p>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% include 'partials/_footer.html' %}
+
+    
 
     <script>
         function logout() {
@@ -902,8 +790,8 @@
         }
 
         // Function to handle the logout action (replace with your actual logout logic)
-
-
     </script>
 </body>
 </html>
+
+

@@ -8,5 +8,5 @@ urlpatterns = [
     path('government-profile',views.Government,name="government-profile"),
     path('post',views.post,name="post"),
     path('policies/',views.policies,name="policies"),
-    path('logout/',logout_view,name='logout')
+    path('logout/',logout_view,name='logout'),
 ]

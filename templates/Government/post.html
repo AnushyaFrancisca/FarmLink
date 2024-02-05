@@ -1,15 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- <html lang="en">
+<html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <! --=============== REMIXICONS ===============-->
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+     
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <!--=============== CSS ===============-->
 <link rel="stylesheet" href="{% static 'css\style.css' %}">
+
+<style>
+    
+    .remove-image-button {
+        cursor: pointer;
+    }
+
+</style>
 
 <title>Blog Submission</title>
 </head>
@@ -21,52 +29,93 @@
 
         <img src="{% static 'img\bg-1.png' %}" alt="login image" class="login__img">
 
-        <form method="POST" class="login__form" enctype="multipart/form-data">
-            {% csrf_token %}
-            <h1 class="login__title" style="font-size: 2rem;">Blog Contents</h1>
+<div class="login">
 
-            <div class="login__content">
-                <div class="login__box">
+    <form method="post" action="{% url 'post' %}" enctype="multipart/form-data" class="login__form">
+        {% csrf_token %}
 
-                    <div class="login__box-input">
+        <h1 class="login__title" style="font-size: 2rem; color: white;">Blog Contents</h1>
 
-                        <input type="text" required class="login__input" name="username" id="login-email"
-                            placeholder=" ">
-                        <label for="login-email" class="login__label">Policy Name</label>
-                    </div>
-                </div>
-
-                <div class="login__box">
-
-                    <div class="login__box-input">
-
-                        <input type="textarea" required class="login__input" name="password" id="login-pass"
-                            placeholder=" ">
-                        <label for="login-pass" class="login__label">Description</label>
-                        
-
-                    </div>
+        <div class="login__content">
+            <div class="login__box">
+                <div class="login__box-input">
+                    <input type="text" required class="login__input" name="title" id="login-title" placeholder=" ">
+                    <label for="login-title" class="login__label">Policy Name</label>
                 </div>
             </div>
 
-            <div class="login__check">
-                <div class="login__check-group">
-                    <input type="image" class="login__check-input" id="login-check">
-                    <label for="login-check" class="login__check-label">Upload image</label>
+            <div class="login__box">
+                <div class="login__box-input">
+                    <input type="text" required class="login__input" name="content" id="login-content" placeholder=" ">
+                    <label for="login-content" class="login__label">Description</label>
                 </div>
             </div>
+        </div>
 
-            <button type="submit" class="login__button">Post</button>
+        <div class="login__box">
+            <div class="login__box-input">
+                <input type="text" class="login__input" name="website_link" id="login-website" placeholder=" ">
+                <label for="login-website" class="login__label">Website Link</label>
+            </div>
+        </div>
 
-            <p class="login__register" style="font-size: 1.05rem;">
-                Return to <a href="{% url 'official-profile' %}">Blog</a>
-             </p>
+        <br>
 
-        </form>
-    </div>
+        <div class="login__check">
+            <div class="login__check-group">
+                <input type="file" class="login__check-input" id="login-check" name="image" style="display: none;" onchange="displayFileName(this)">
+                <i class='bx bx-upload' onclick="document.getElementById('login-check').click()" style="font-size: 21px; cursor: pointer;"></i>
+                <label for="login-check" class="login__check-label" style="font-size: 15px;">Upload image</label>
+                <span id="file-name-info" style="margin-left: 10px; color: white; font-size: 15px;">No file chosen</span>
+            </div>
+        </div>
+
+        <button type="submit" class="login__button">Post Blog</button>
+
+        <p class="login__register" style="font-size: 1.05rem; color: white;">
+            Return to <a href="{% url 'official-profile' %}" style="color: white;">Blog</a>
+        </p>
+    </form>
+
+</div>
+
+
 
     <!--=============== MAIN JS ===============-->
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+     function displayFileName(input) {
+        const fileNameInfo = document.getElementById('file-name-info');
+        const selectedImageContainer = document.getElementById('selected-image');
+
+        if (input.files.length > 0) {
+            fileNameInfo.innerText = input.files[0].name;
+            addRemoveButton(); // Add this line
+        } else {
+            fileNameInfo.innerText = 'No file chosen';
+            selectedImageContainer.innerHTML = ''; // Clear any existing image
+        }
+    }
+
+    function addRemoveButton() {
+        const fileNameInfo = document.getElementById('file-name-info');
+        var removeButton = document.createElement('span');
+        removeButton.innerHTML = '           X';
+        removeButton.className = 'remove-image-button';
+        removeButton.onclick = function () {
+            clearImageSelection();
+        };
+        fileNameInfo.appendChild(removeButton);
+    }
+
+    function clearImageSelection() {
+        const fileNameInfo = document.getElementById('file-name-info');
+        fileNameInfo.innerText = 'No file chosen';
+
+        var fileInput = document.getElementById('login-check');
+        fileInput.value = ''; // Clear the file input
+    }
+    </script>
     {% endblock content %}
 </body>
 
