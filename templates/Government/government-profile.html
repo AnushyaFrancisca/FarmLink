@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
-        
-    
-
         #navbar {
             display: flex;
             align-items: center;
@@ -436,7 +434,8 @@
         .mcb-section .mcb-wrap .mcb-item-u3ml3gj8m .mfn-header-tmpl-menu-sidebar {
             background-color: #391F1E;
         }
-/* 
+
+        /* 
         .mcb-section-9pog48gye {
             background-color: #FDF4E9;
             padding-bottom: 160px;
@@ -562,13 +561,16 @@
             transform: translate(-50%, -50%);
             width: 300px;
             max-width: 80%;
-            background: rgba(255, 255, 255, 0.1);/* Transparent white background */
+            background: rgba(255, 255, 255, 0.1);
+            /* Transparent white background */
             padding: 20px;
-            border: 2px solid white; /* White border */
+            border: 2px solid white;
+            /* White border */
             border-radius: 10px;
             text-align: center;
             color: white;
-            font-family: 'Times New Roman', Times, serif; /* Change the font as needed */
+            font-family: 'Times New Roman', Times, serif;
+            /* Change the font as needed */
         }
 
         .popup-content {
@@ -598,7 +600,7 @@
         .logout-confirm-btn {
             background-color: rgb(99, 153, 105);
             color: rgb(255, 255, 255);
-            padding: 5px 20px; 
+            padding: 5px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -607,8 +609,10 @@
         }
 
         .logout-confirm-btn:hover {
-            background-color: #ddd; /* Light gray on hover */
+            background-color: #ddd;
+            /* Light gray on hover */
         }
+
         body {
             margin: 0;
             height: 100vh;
@@ -646,32 +650,41 @@
             z-index: 1;
         }
 
-        .blog-container {
+        
+        .blogg-container {
             max-width: 600px;
-            margin: 70px 20px 20px 50px;
+            margin: 80px 0px 20px 100px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
+            float: left;
+            width: calc(50% - 40px); /* 50% width with 20px margin on each side */
+            margin-bottom: 40px;
         }
 
-        .blog-container:hover {
+        .blogg-container:hover {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
-        .blog-image {
+        .blogg-image {
             width: 100%;
             height: 200px;
-            object-fit:cover;
+            object-fit: cover;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             display: block;
             margin: 0;
             padding: 0;
+            transition: transform 0.3s ease;
         }
 
-        .blog-content {
+        .blogg-image:hover {
+            transform: scale(1.1); /* Adjust the scaling factor as needed */
+        }
+
+        .blogg-content {
             padding: 20px;
         }
 
@@ -684,17 +697,17 @@
             font-size: 14px;
         }
 
-        .post-details {
+        .postt-details {
             font-size: 12px;
             font-weight: normal;
             color: #888;
         }
-
     </style>
 </head>
+
 <body>
-<header id="mfn-header-template" data-id="36" data-mobile-type="" data-type="absolute"
-            class="mfn-header-tmpl mfn-header-main mfn-header-tmpl-absolute mfn-hasSticky mfn-hasMobile mfn-mobile-header-tmpl-fixed">
+    <header id="mfn-header-template" data-id="36" data-mobile-type="" data-type="absolute"
+        class="mfn-header-tmpl mfn-header-main mfn-header-tmpl-absolute mfn-hasSticky mfn-hasMobile mfn-mobile-header-tmpl-fixed">
         <div id="navbar">
             <div>
                 <a href="{% url 'official-profile' %}" class="active">BLOG</a>
@@ -704,34 +717,37 @@
                 <!-- Add your profile and search icons or replace with appropriate icon libraries -->
 
 
-            
-            <div class="mfn-builder-content mfn-header-tmpl-builder">
-               
-                <div class="section mcb-section mfn-default-section mcb-section-miiz0qrse mcb-header-section close-button-left default-width show-on-scroll"
-                    style="">
-                
+
+                <div class="mfn-builder-content mfn-header-tmpl-builder">
+
+                    <div class="section mcb-section mfn-default-section mcb-section-miiz0qrse mcb-header-section close-button-left default-width show-on-scroll"
+                        style="">
+
 
                         <div class="wrap mcb-wrap mcb-wrap-d782q0jk6 mcb-header-wrap one-third tablet-one-third mobile-one mfn-item-custom-width clearfix"
                             data-desktop-col="" data-tablet-col="tablet-one-third" data-mobile-col="mobile-one"
                             style="">
                             <div class="mcb-wrap-inner mcb-wrap-inner-d782q0jk6">
                                 <div class="mcb-wrap-background-overlay"></div>
-                                
+
 
                                 <!-- <i class='bx bx-user'></i> -->
-                                
-                                <div class="icon-wrapper" id="userIcon" style="z-index: 10;" onclick="openLogoutPopup()">
+
+                                <div class="icon-wrapper" id="userIcon" style="z-index: 10;"
+                                    onclick="openLogoutPopup()">
                                     <i class='bx bx-user'></i>
                                 </div>
-                                
-                                
+
+
                                 <!-- The Logout Popup -->
                                 <div id="logoutPopup" class="popup">
                                     <div class="popup-content">
                                         <span class="close" onclick="closeLogoutPopup()">&times;</span>
                                         <h3>Logout Confirmation</h3>
-                                        <p>Are you sure you want to logout?</p>
-                                        <button id="logout-btn" class="logout-confirm-btn" onclick="logout()" style="font-family: 'Times New Roman', Times, serif;"><a href=" {% url 'logout' %}">LOGOUT</a></button>
+                                        <p style="color: white;">Are you sure you want to logout?</p>
+                                        <button id="logout-btn" class="logout-confirm-btn" onclick="logout()"
+                                            style="font-family: 'Times New Roman', Times, serif;"><a
+                                                href=" {% url 'logout' %}">LOGOUT</a></button>
                                     </div>
                                 </div>
                             </div>
@@ -742,9 +758,9 @@
 
 
         </div>
-        
 
-    </div>
+
+        </div>
 
     </header>
 
@@ -754,29 +770,29 @@
     <h1
         style="text-align: center; color: white; margin-top: 135px; font-size: 4rem; font-family:'Times New Roman', Times, serif; font-weight: 100;">
         POLICIES & SCHEMES</h1>
-        <br>
-        <br> 
-        <div class="blog-container">
-            {% for post in posts %}
-            <img class="blog-image" src="{{ post.image.url }}" alt="{{ post.title }} Image">
-            <div class="blog-content">
-                <h2>{{ post.title }}</h2>
+    <br>
+    <br>
+    {% for post in posts %}
+    <div class="blogg-container">
+        <img class="blogg-image" src="{{ post.image.url }}" alt="{{ post.title }} Image">
+        <div class="blogg-content">
+            <h2>{{ post.title }}</h2>
             <p>{{ post.content }}</p>
-            <p>Posted on: <span class="postt-details">{{ post.timestamp }}</span>  &nbsp  &nbsp
-                    For more details refer: <a href="{{ post.website_link }}" class="postt-details" target="_blank"> {{ post.website_link }}</a>
-            </p>
-            </div>
+            <p>Posted on: <span class="postt-details">{{ post.timestamp }}</span> &nbsp; &nbsp; For more details refer:
+                <a href="{{ post.website_link }}" class="postt-details" target="_blank"> {{ post.website_link }}</a></p>
         </div>
-        {% endfor %}
-        
-        {% include 'partials/_footer.html' %}
+    </div>
+    {% endfor %}
 
-    
+
+    {% include 'partials/_footer.html' %}
+
+
 
     <script>
         function logout() {
             document.getElementById('logout-btn').click();
-            alert("Logout successful!"); 
+            alert("Logout successful!");
         }
 
         // Function to open the logout popup
@@ -792,6 +808,5 @@
         // Function to handle the logout action (replace with your actual logout logic)
     </script>
 </body>
+
 </html>
-
-

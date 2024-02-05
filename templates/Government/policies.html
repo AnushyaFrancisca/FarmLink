@@ -17,7 +17,6 @@
 
         .img-layer {
             position: absolute;
-            /* Change 'fixed' to 'absolute' */
             top: 0;
             left: 0;
             width: 100%;
@@ -45,15 +44,17 @@
             z-index: 1;
         }
 
-
         .blogg-container {
             max-width: 600px;
-            margin: 70px 20px 20px 50px;
+            margin: 80px 0px 20px 100px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
+            float: left;
+            width: calc(50% - 40px); /* 50% width with 20px margin on each side */
+            margin-bottom: 40px;
         }
 
         .blogg-container:hover {
@@ -69,6 +70,11 @@
             display: block;
             margin: 0;
             padding: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .blogg-image:hover {
+            transform: scale(1.1); /* Adjust the scaling factor as needed */
         }
 
         .blogg-content {
@@ -103,25 +109,22 @@
     <br>
     <br>
 
+    
 
+    {% for post in posts %}
     <div class="blogg-container">
-        {% for post in posts %}
         <img class="blogg-image" src="{{ post.image.url }}" alt="{{ post.title }} Image">
         <div class="blogg-content">
             <h2>{{ post.title }}</h2>
             <p>{{ post.content }}</p>
-            <p>Posted on: <span class="postt-details">{{ post.timestamp }}</span>  &nbsp  &nbsp
-                    For more details refer: <a href="{{ post.website_link }}" class="postt-details" target="_blank"> {{ post.website_link }}</a>
-            </p>
-            
+            <p>Posted on: <span class="postt-details">{{ post.timestamp }}</span> &nbsp; &nbsp; For more details refer: <a
+                    href="{{ post.website_link }}" class="postt-details" target="_blank"> {{ post.website_link }}</a></p>
         </div>
     </div>
     {% endfor %}
-    
 
     {% include 'partials/_footer.html' %}
 
 </body>
 
 </html>
-
