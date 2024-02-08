@@ -25,7 +25,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-@login_required
+
 def post(request):
     form = BlogPostForm()
     if request.method == 'POST':
