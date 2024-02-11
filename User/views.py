@@ -12,6 +12,8 @@ from Farmer.models import  Followers, LikePost, Post, Profile
 from django.db.models import Q
 from django.urls import reverse
 from django.contrib.auth import logout as auth_logout
+from django.http import HttpResponseRedirect
+
 # Create your views here.
 
 def homepage(request):
@@ -159,10 +161,12 @@ def profile_details(request,username):
 
 @login_required(login_url='login')
 def deletee(request, id):
+
     post = Post.objects.get(id=id)
     post.delete()
 
-    return redirect('/Userprofile/'+ request.user.username)
+    # Redirect to the farmer's profile using reverse()
+    return HttpResponseRedirect(reverse('profile_details', args=[request.user.username]))
 
 
 @login_required(login_url='login')

@@ -193,7 +193,7 @@
 
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{pos.caption}}</h5>
-                                                    {% if user == user_profile.user %} <a href=" /delete/{{pos.id}} "><i
+                                                    {% if user == user_profile.user %} <a href=" {% url 'deletee-post' id=pos.id %} "><i
                                                             class="fa-solid fa-trash"></i></a>
 
 
