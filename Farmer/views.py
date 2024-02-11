@@ -35,11 +35,14 @@ def weather(request):
 def job(request):
     return render(request, 'Farmer/job.html')
 
+def market(request):
+    return render(request, 'Farmer/market.html')
+
 def policies(request):
     return render(request, 'Government/policies.html')
 
 def profile(request):
-    return render(request, 'Farmer/profile2.html')
+    return render(request, 'Farmer/profile.html')
 
 @login_required(login_url='login')
 def logout(request):

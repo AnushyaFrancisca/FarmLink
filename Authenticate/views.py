@@ -35,7 +35,7 @@ def userlogin(request):
                 
             elif details and details.user_type == 'Others':
                 login(request, user)
-                return redirect('user-profile')
+                return redirect('others-profile')
             
         else:
             msg = "wrong Credentials"

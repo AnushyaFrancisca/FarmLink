@@ -54,13 +54,13 @@
                 </div>
                 <ul class="nav flex-column mt-4">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'farmer-profile' %}">
+                        <a class="nav-link active" href="{% url 'others-profile' %}">
                             <i class="fa-solid fa-house mr-1"></i> Home
                         </a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'market' %}">
+                        <a class="nav-link" href="{% url 'markett' %}">
                             <i class="fa-solid fa-compass mr-1"></i> Marketplace
                         </a>
                     </li>
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'weather' %}">
+                        <a class="nav-link" href="{% url 'weatherr' %}">
                             <i class="fa-solid fa-compass mr-1"></i> Weather
                         </a>
                     </li>
@@ -89,7 +89,7 @@
     
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user-profile' user %}">
+                        <a class="nav-link" href="{% url 'profile_details' user %}">
                             <i class="fa-solid fa-user mr-1"></i> Profile
                         </a>
                     </li>
@@ -103,9 +103,9 @@
             {% load static %}
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="background-color: #d1e8c260 ;">
                 <!-- Your main content goes here -->
-                {% include "Farmer/search.html" %}
-                {% include "Farmer/profile_upload.html" %}
-                {% include "Farmer/edit_profile.html" %}
+                {% include "User/search.html" %}
+                {% include "User/profile_upload.html" %}
+                {% include "User/edit_profile.html" %}
                 <section class="gradient-custom-2">
                     <div class="container py-5">
                         <div class="row d-flex justify-content-center align-items-center h-100">

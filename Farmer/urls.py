@@ -7,6 +7,7 @@ urlpatterns = [
     # path('',views.Farmer,name="farmer-home"),
     path('weather/',views.weather,name='weather'),
     path('job/',views.job,name='job'),
+    path('market/',views.market,name='market'),
     path('policies',views.policies,name='policies'),
     path('profile/',views.profile,name='profile'),
     path('logout/',views.logout,name='logout'),
