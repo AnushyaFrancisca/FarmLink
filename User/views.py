@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from Farmer.models import  Followers, LikePost, Post, Profile
 from django.db.models import Q
 from django.urls import reverse
+from django.contrib.auth import logout as auth_logout
 # Create your views here.
 
 def homepage(request):
@@ -49,7 +50,7 @@ def profilee(request):
 
 @login_required(login_url='login')
 def user_logout(request):
-    user_logout(request)
+    auth_logout(request)
     return redirect('login')
 
     
@@ -65,9 +66,9 @@ def uploadd(request):
         new_post = Post.objects.create(user=user, image=image, caption=caption)
         new_post.save()
 
-        return redirect('/')
+        return redirect('others-profile')
     else:
-        return redirect('/')
+        return redirect('others-profile')
 
 @login_required(login_url='login')
 def likess(request, id):

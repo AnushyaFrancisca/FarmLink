@@ -10,6 +10,9 @@ from django.contrib.auth.decorators import login_required
 from . models import  Followers, LikePost, Post, Profile
 from django.db.models import Q
 from django.urls import reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth import logout as auth_logout
+
 
 # Create your views here.
 
@@ -45,8 +48,8 @@ def profile(request):
     return render(request, 'Farmer/profile.html')
 
 @login_required(login_url='login')
-def logout(request):
-    logout(request)
+def logout_farmer(request):
+    auth_logout(request)
     return redirect('login')
 
 
@@ -79,9 +82,9 @@ def upload(request):
         new_post = Post.objects.create(user=user, image=image, caption=caption)
         new_post.save()
 
-        return redirect('/')
+        return redirect('farmer-profile')
     else:
-        return redirect('/')
+        return redirect('farmer-profile')
 
 @login_required(login_url='login')
 def likes(request, id):
@@ -170,12 +173,12 @@ def user_profile(request,username):
     return render(request, 'Farmer/profile.html', context)
     
 
-@login_required(login_url='login')
-def delete(request, id):
+def delete_post(request, id):
     post = Post.objects.get(id=id)
     post.delete()
 
-    return redirect('/Farmerprofile/'+ request.user.username)
+    # Redirect to the farmer's profile using reverse()
+    return HttpResponseRedirect(reverse('user-profile', args=[request.user.username]))
 
 
 @login_required(login_url='login')
