@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from .models import userdetails
 from builtins import print
 from django.views.generic import TemplateView
-
+from Farmer.models import Profile
 
 # Create your views here.
 def userlogin(request):
@@ -71,6 +71,9 @@ def register(request):
 
         user_details = userdetails(user_id=user.id, user_phone=phone, user_type=role)
         user_details.save()
+        user_model = User.objects.get(username=username)
+        new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
+        new_profile.save()
         print(f"User details created: {user_details.__dict__}")
 
 
@@ -85,4 +88,3 @@ def about(request):
 
 def base(request):
     return render(request, 'Authenticate/base.html')
-
