@@ -17,6 +17,7 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <a href="{% url 'product-upload' %}">Upload Product</a>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Enter your favourite food" aria-label="Search">
@@ -29,54 +30,22 @@
     <div class="divider"></div>
     <div class="topdishes" id="menu">
         <h2>Our Products</h2>
+        <!-- Display uploaded products -->
+        {% for product in products %}
         <div class="row card-dishes">
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/9.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-                  <h3 class="h5 mt-1">Tomato</h3>
-                  <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class="card border-0 shadow">
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <div class="card-body py-4 text-center">
+                        <h3 class="h5 mt-1">{{ product.name }}</h3>
+                        <p class="product-price">Price per kg: ${{ product.price }}</p>
+                    </div>
                 </div>
-                </a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/3.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-                  <h3 class="h5 mt-1">Potato</h3>
-                  <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-                </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/4.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-                  <h3 class="h5 mt-1">Pumpkin Seeds</h3>
-                  <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-                </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/7.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-                  <h3 class="h5 mt-1">Sunflower Seeds</h3>
-                  <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-                </div></a></div>
-                <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/5.jpg" alt="Food Name">
-                  <div class="card-body py-4 text-center">
-                    <h3 class="h5 mt-1">Rice</h3>
-                    <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-                  </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/6.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-                  <h3 class="h5 mt-1">Shovel</h3>
-                  <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-                </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/2.jpg" alt="Food Name">
-                <div class="card-body py-4 text-center">
-               <h3 class="h5 mt-1">Orange</h3>
-               <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-              </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/1.jpg" alt="Food Name">
-               <div class="card-body py-4 text-center">
-                <h3 class="h5 mt-1">Apple</h3>
-                <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-               </div></a></div>
-            <div class="col-md-4 col-sm-6 mb-grid-gutter"><a class="card border-0 shadow" href="food-delivery-category.html"><img class="card-img-top" src="/static/img/8.jpg" alt="Food Name">
-               <div class="card-body py-4 text-center">
-                <h3 class="h5 mt-1">Strawberry</h3>
-                <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
-               </div></a></div>
-           </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Form for uploading products -->
+        
     </div>
     <div class="divider"></div>
     <div class="footer">

@@ -58,7 +58,7 @@
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
                     <a class="nav-link active" href="{% url 'farmer-profile' %}">
-                        <i class="fa-solid fa-house mr-1"></i> Home
+                        <i class='bx bx-home' ></i> Home
                     </a>
                 </li>
                 
@@ -74,31 +74,31 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'weather' %}">
-                        <i class="fa-solid fa-compass mr-1"></i> Weather
+                        <i class='bx bxs-sun'></i> Weather
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                        <i class="fa-solid fa-magnifying-glass mr-1"></i> Search
+                        <i class='bx bx-search' ></i> Search
                     </a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-bs-whatever="@getbootstrap">
-                        <i class="fa-solid fa-circle-plus mr-1"></i> Create Post
+                        <i class='bx bxs-plus-circle' ></i> Create Post
                     </a>
 
 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'user-profile' user %}">
-                        <i class="fa-solid fa-user mr-1"></i> Profile
+                        <i class='bx bx-user' ></i> Profile
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout_farmer' %}">
-                        <i class="fa-solid fa-right-from-bracket mr-1"></i> Logout
+                        <i class='bx bx-exit' ></i> Logout
                     </a>
                 </li>
             </ul>
@@ -125,7 +125,7 @@
                                     <hr>
                                     <div class="d-flex justify-content-between" style="margin-bottom: 8px; margin-right:10px;">
             
-                                        <a href="/like-post/{{ post.id }}" class="btn btn-outline-primary">Like</a>
+                                        <a href="{% url 'like-post' id=pos.id %}" class="btn btn-outline-primary">Like</a>
             
                                         {% if pos.no_of_likes == 0 %}
                                         <p>0</p>

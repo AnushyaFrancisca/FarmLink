@@ -18,5 +18,6 @@ urlpatterns = [
     path('Farmerdelete/<str:id>/', views.delete_post, name='delete-post'),
     path('search-results/', views.search_results, name='search_results'),
     path('follow/', views.follow, name='follow'),
+    path('product-upload/', views.product_upload, name='product-upload'),
    
 ]

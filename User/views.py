@@ -44,7 +44,7 @@ def jobb(request):
 def markett(request):
     return render(request, 'User/market.html')
 
-def policies(request):
+def policiess(request):
     return render(request, 'Government/policies.html')
 
 def profilee(request):
@@ -93,10 +93,7 @@ def likess(request, id):
         print(post.id)
 
         # Redirect back to the post's detail page
-        url = reverse('home_post', args=[id])
-
-        # Redirect back to the post's detail page
-        return redirect(url)
+        return HttpResponseRedirect(reverse('profile_details', args=[request.user.username]))
     
 @login_required(login_url='login') # Ensure that 'Login' matches the actual login URL
 def profile_details(request,username):
@@ -165,7 +162,7 @@ def deletee(request, id):
     post = Post.objects.get(id=id)
     post.delete()
 
-    # Redirect to the farmer's profile using reverse()
+    # Redirect to the user's profile using reverse()
     return HttpResponseRedirect(reverse('profile_details', args=[request.user.username]))
 
 

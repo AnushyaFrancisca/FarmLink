@@ -12,7 +12,8 @@ from django.db.models import Q
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout as auth_logout
-
+from .forms import ProductForm
+from .models import Product
 
 # Create your views here.
 
@@ -46,6 +47,9 @@ def policies(request):
 
 def profile(request):
     return render(request, 'Farmer/profile.html')
+
+def product_upload(request):
+    return render(request, 'Farmer/products.html')
 
 @login_required(login_url='login')
 def logout_farmer(request):
@@ -107,10 +111,7 @@ def likes(request, id):
         print(post.id)
 
         # Redirect back to the post's detail page
-        url = reverse('home_post', args=[id])
-
-        # Redirect back to the post's detail page
-        return redirect(url)
+        return HttpResponseRedirect(reverse('user-profile', args=[request.user.username]))
     
 @login_required(login_url='login') # Ensure that 'Login' matches the actual login URL
 def user_profile(request,username):
@@ -205,7 +206,19 @@ def home_post(request,id):
     }
     return render(request, 'Farmer/Farmer.html',context)
 
+def upload_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('market')
+    else:
+        form = ProductForm()
+    return render(request, 'Farmer\products.html', {'form': form})
 
+def market(request):
+    products = Product.objects.all()
+    return render(request, 'Farmer\market.html', {'products': products})
 
 def follow(request):
     if request.method == 'POST':
